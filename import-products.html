@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import Products — Sarvesh Medicose</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    textarea { width: 100%; min-height: 200px; font-family: monospace; font-size: 0.9rem; }
+    button { margin-top: 0.5rem; padding: 0.5rem 1rem; cursor: pointer; }
+    pre { background: #f0f0f0; padding: 1rem; overflow: auto; font-size: 0.85rem; }
+    .hint { color: #555; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Product import helper</h1>
+  <p class="hint">
+    When you have your PDF product list, type or paste rows here — one product per line:
+    <strong>Name | Category | Description | Price | stock</strong>
+    (stock = in, low, or out)
+  </p>
+  <textarea id="input" placeholder="Paracetamol 500mg | Pain Relief | Strip of 10 | ₹25 | in"></textarea>
+  <button type="button" id="convert">Convert to JSON</button>
+  <h2>Output (copy into data/products.json)</h2>
+  <pre id="output">[]</pre>
+
+  <script>
+    document.getElementById("convert").addEventListener("click", () => {
+      const lines = document.getElementById("input").value.trim().split("\n").filter(Boolean);
+      const products = lines.map((line) => {
+        const [name, category, description, price, stock = "in"] = line.split("|").map((s) => s.trim());
+        return { name, category, description, price, stock: stock || "in" };
+      });
+      document.getElementById("output").textContent = JSON.stringify(products, null, 2);
+    });
+  </script>
+</body>
+</html>

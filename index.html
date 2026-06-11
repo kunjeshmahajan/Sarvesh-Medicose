@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarvesh Medicose — Khargone MP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon" aria-hidden="true">S</span>
+        <span class="logo-text">Sarvesh<span class="logo-sub">Medicose · Khargone</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#products">Products</a>
+        <a href="#companies">Companies</a>
+        <a href="#locations">Areas</a>
+        <a href="#history">History</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="hero-badge">Wholesale medical stockist · Since 1997</p>
+        <h1>Sarvesh Medicose, Khargone</h1>
+        <p class="hero-lead">
+          Established in 1997 as a wholesale medical shop, we have grown into a trusted stockist
+          for pharmaceutical companies and divisions across Khargone district (451001).
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">View Products</a>
+          <a href="#team" class="btn btn-outline">Our Team</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-value" id="statProducts">—</span>
+          <span class="stat-label">Products listed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statCompanies">—</span>
+          <span class="stat-label">Stockist companies</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statTerritories">—</span>
+          <span class="stat-label">Business territories</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statYears">—</span>
+          <span class="stat-label">Years in Khargone</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Products <span class="section-count" id="productsSectionCount"></span></h2>
+          <p class="section-desc">
+            Browse medicines and health essentials from our wholesale catalog.
+          </p>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-wrap">
+            <input type="search" id="productSearch" placeholder="Search by name or category…" aria-label="Search products" />
+          </div>
+          <div class="filter-wrap">
+            <label for="categoryFilter" class="sr-only">Filter by category</label>
+            <select id="categoryFilter">
+              <option value="">All categories</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="productsLoading" class="loading-state">Loading product catalog…</p>
+        <div id="productsGrid" class="products-grid" role="list"></div>
+        <p id="productsEmpty" class="empty-state hidden">No products match your search.</p>
+        <div id="productsLoadMoreWrap" class="load-more-wrap hidden">
+          <div class="load-more-actions">
+            <button type="button" id="productsShowLess" class="btn btn-outline hidden">Show less</button>
+            <button type="button" id="productsLoadMore" class="btn btn-outline">Show more</button>
+          </div>
+          <p class="load-more-meta" id="productsLoadMeta"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="companies" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Stockist Companies <span class="section-count" id="companiesSectionCount"></span></h2>
+          <p class="section-desc">
+            Pharmaceutical companies and divisions for which Sarvesh Medicose holds stockist authorization.
+          </p>
+        </div>
+        <div class="toolbar">
+          <div class="search-wrap">
+            <input type="search" id="companySearch" placeholder="Search company or division…" aria-label="Search companies" disabled />
+          </div>
+        </div>
+        <div id="companiesList" class="chip-list" role="list"></div>
+        <p id="companiesEmpty" class="empty-state hidden"></p>
+        <div id="companiesLoadMoreWrap" class="load-more-wrap hidden">
+          <div class="load-more-actions">
+            <button type="button" id="companiesShowLess" class="btn btn-outline hidden">Show less</button>
+            <button type="button" id="companiesLoadMore" class="btn btn-outline">Show more</button>
+          </div>
+          <p class="load-more-meta" id="companiesLoadMeta"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="locations" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Business Areas <span class="section-count" id="locationsSectionCount"></span></h2>
+          <p class="section-desc">
+            Villages and cities across Khargone, Barwani, and Dhar districts where we supply as wholesale stockist.
+          </p>
+        </div>
+        <div class="toolbar">
+          <div class="search-wrap">
+            <input type="search" id="locationSearch" placeholder="Search village or city…" aria-label="Search locations" disabled />
+          </div>
+          <div class="filter-wrap">
+            <label for="locationTypeFilter" class="sr-only">Filter by type</label>
+            <select id="locationTypeFilter" disabled>
+              <option value="">All types</option>
+              <option value="city">Cities</option>
+              <option value="village">Villages</option>
+            </select>
+          </div>
+        </div>
+        <div id="locationsList" class="locations-grid" role="list"></div>
+        <p id="locationsEmpty" class="empty-state hidden"></p>
+        <div id="locationsLoadMoreWrap" class="load-more-wrap hidden">
+          <div class="load-more-actions">
+            <button type="button" id="locationsShowLess" class="btn btn-outline hidden">Show less</button>
+            <button type="button" id="locationsLoadMore" class="btn btn-outline">Show more</button>
+          </div>
+          <p class="load-more-meta" id="locationsLoadMeta"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="history" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Shop History</h2>
+          <p class="section-desc">
+            From a small wholesale shop in 1997 to an established stockist in Khargone, Madhya Pradesh.
+          </p>
+        </div>
+        <div class="timeline" id="historyTimeline" role="list"></div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Shop Management</h2>
+          <p class="section-desc">Leadership, operations, and accounts at Sarvesh Medicose.</p>
+        </div>
+        <div id="teamSection"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-contact">
+      <div class="container">
+        <h2>Visit us</h2>
+        <p class="section-desc">Wholesale and stockist enquiries — visit us at our Khargone shop.</p>
+        <ul class="contact-list">
+          <li><strong>Address:</strong> <span id="contactAddress"></span></li>
+          <li id="contactPhonesRow"><strong>Phone:</strong> <span id="contactPhones"></span></li>
+          <li><strong>Business:</strong> <span id="contactBusiness"></span></li>
+          <li><strong>Hours:</strong> <span id="contactHours"></span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Sarvesh Medicose, Khargone MP (451001). All rights reserved.</p>
+      <p class="footer-credit">Website made by Kunjesh</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
