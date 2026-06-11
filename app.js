@@ -14,7 +14,7 @@ const STORE_CONFIG = {
   yearsInBusiness: 30,
 };
 
-const PAGE_SIZE = 15;
+const PAGE_SIZE = 9;
 
 let allProducts = [];
 let allCompanies = [];
