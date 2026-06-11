@@ -1,0 +1,35 @@
+{
+  "employeeCount": 6,
+  "leadership": [
+    {
+      "role": "Owner",
+      "name": "Mr. Sarvesh Mahajan",
+      "qualification": "Graduate in Commerce"
+    },
+    {
+      "role": "Co-owner",
+      "name": "Mr. Giriraj Mahajan",
+      "qualification": "Graduate in Commerce"
+    },
+    {
+      "role": "Operational Management",
+      "name": "Mr. Vallabh Mahajan",
+      "qualification": "M.Pharma — 10 years of experience in Pharma R&D (preclinical and monitoring scientist)"
+    },
+    {
+      "role": "Internal Business Reviewer / Auditor",
+      "name": "Mr. Yash Mahajan",
+      "qualification": "MBA"
+    }
+  ],
+  "accountants": [
+    { "name": "Mr. Anand Mahajan" },
+    { "name": "Mr. Giriraj Mahajan" }
+  ],
+  "advisors": [
+    {
+      "role": "Tax Adviser & Auditor of the firm",
+      "name": "Mr. Girish Somani"
+    }
+  ]
+}
